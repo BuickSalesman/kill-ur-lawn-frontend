@@ -1,6 +1,10 @@
 import { PlantsIndex } from "./PlantsIndex";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { Signup } from "./Signup";
+import { Login } from "./Login";
+import { LogoutLink } from "./LogoutLink";
 
 export function Content() {
   const [plants, setPlants] = useState([]);
@@ -16,6 +20,11 @@ export function Content() {
 
   return (
     <div>
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<LogoutLink />} />
+      </Routes>
       <p>
         Search : <input type="text" value={query} onChange={(event) => setQuery(event.target.value)} />
         <button onClick={handleIndexPlants}>Submit</button>

@@ -23,7 +23,7 @@ export function Content() {
 
   const [favorited_plants, setFavoritedPlants] = useState([]);
 
-  const handleIndexPhotos = () => {
+  const handleIndexFavoritedPlants = () => {
     console.log("yo whaddup");
     axios.get("http://localhost:3000/favorited_plants.json").then((response) => {
       console.log(response.data);
@@ -31,7 +31,7 @@ export function Content() {
     });
   };
 
-  useEffect(handleIndexPhotos, []);
+  useEffect(handleIndexFavoritedPlants, []);
 
   return (
     <div>
